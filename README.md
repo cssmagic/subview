@@ -17,8 +17,9 @@
 
 #### 外部依赖
 
-* history.state（它是 `history.state` 属性的 polyfill）
-* jQuery（或 Zepto 等兼容类库）
+* jQuery（或 Zepto 等兼容类库）-- DOM 操作
+* history.state -- `history.state` 属性的 polyfill
+* Action -- 点击事件绑定
 
 ## 安装
 
@@ -31,12 +32,15 @@
 0. 在页面中加载 Subview 的脚本文件及必要的依赖：
 
 	```html
-	<script src="bower_components/history.state/src/history.state.js"></script>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/history.state/src/history.state.js"></script>
+	<script src="bower_components/action/src/action.js"></script>
 	<script src="bower_components/subview/src/subview.js"></script>
 	```
 
-#### 注意事项
+## 使用步骤
+
+#### Polyfill 与 Fallback
 
 Subview 依赖 HTML5 History API，且依赖 `history.state` 属性。为了在那些支持前者但不支持后者的浏览器中正常运行，我们需要对后者进行 polyfill。我们采用 [history.state](https://github.com/cssmagic/history.state) 这个类库来完成 polyfill：
 
@@ -53,6 +57,14 @@ if (historyState.isSupported()) {
 	// Fallback 到基本的 UI 效果
 }
 ```
+
+#### 初始化
+
+需要在 DOM ready 时调用 Subview 的初始化方法。（[参见相关文档](https://github.com/cssmagic/subview/issues/2#user-content-js-api-init)）
+
+#### 输出 HTML 接口
+
+Subview 预定义了一些动作，可以借助 [Action](https://github.com/cssmagic/action) 类库自动完成事件绑定，不需要再手工绑定到 DOM 元素。（[参见相关文档](https://github.com/cssmagic/subview/issues/2#user-content-js-api-exportActions)）
 
 ## API 文档
 

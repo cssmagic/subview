@@ -1,0 +1,38 @@
+{
+  "name": "subview",
+  "homepage": "https://github.com/cssmagic/subview",
+  "authors": [
+    "cssmagic <cssmagic.cn@gmail.com>"
+  ],
+  "description": "View switching with history support.",
+  "main": "src/subview.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "view",
+    "history",
+    "ui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "**.sh",
+    "**.min.js",
+    "package.json",
+    "node_modules",
+    "bower_components",
+    "gulpfile.js",
+    "test",
+    "doc",
+    "demo"
+  ],
+  "dependencies": {
+    "action": "0.3.*",
+    "history.state": "1.*",
+    "jquery": "*"
+  },
+  "devDependencies": {
+    "zepto.js": "1.*"
+  }
+}
