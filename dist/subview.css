@@ -1,0 +1,18 @@
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+.subview {
+  display: none;
+  width: 100%;
+  overflow-x: hidden;
+}
+.subview:only-of-type,
+.subview.subview-root,
+.subview.subview-in {
+  display: block;
+}
+.subview.subview-ready,
+.subview.subview-out {
+  display: none;
+}
