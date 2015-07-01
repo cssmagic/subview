@@ -1,42 +1,6 @@
-# API 文档
-
-## 导言<a name="intro"></a>
-
-#### 概述
-
-每个独立的子页面被称作一个 view。使用 Subview 组件的网页至少应该包含一个 root view 和一个 sub view。
-
-所有 view 进入视口的顺序会保存到入一个栈中，栈的最后一个元素就是视口中的 view（即当前 view）。所有的 view 要么处在栈中（下图中的 `_stack`），要么处在候选区（下图中的 `.ready`）。
-
-![subview](https://f.cloud.github.com/assets/5830104/2406297/657e4588-aa69-11e3-85b1-1dd43ab930a9.jpg)
-
-栈的机制是这样的：
-
-* 栈中的第一个元素总是 root view 元素。
-* 当从候选区中的某个 view 切入视口时，它将被压入栈。
-* 当当前 view 返回到上一个 view 时，当前 view 会从栈中抛出（移回候选区）。
-
-#### 结构层约定
-
-```jade
-body
-	article.subview.subview-root
-		//e.g. main page
-
-	article.subview#login
-		header.nav-bar
-			a @href='#' '<< 返回'
-			h1 'Login'
-		main
-			//e.g. login form
-
-	article.subview#prd-detail
-		header.nav-bar
-			a @href='#' '<< 返回'
-			h1 'Product'
-		main
-			//e.g. product detail
-```
+---
+title: "API 文档 - JavaScript 接口"
+---
 
 ## JavaScript 接口<a name="js-api"></a>
 
@@ -138,7 +102,7 @@ body
 
 将预定义的动作导出，以便 [Action](https://github.com/cssmagic/action) 类库完成事件绑定。完成这一步之后，下面将要介绍的 HTML 接口即可正常使用了。
 
-此操作可在任何时机执行，执行后 HTML 接口即生效。因此建议
+此操作可在任何时机执行，执行后 HTML 接口即生效。因此建议在执行完初始化方法之后立即完成此操作。
 
 #### 参数
 
@@ -164,58 +128,3 @@ var actions = subview.exportActions()
 // 传递给 Action，完成事件绑定
 action.add(actions)
 ```
-
-
-## 事件接口<a name="event-api"></a>
-
-事件接口是较为底层的接口，当每个 view 每次切入或移出视口时，均会触发以下事件。
-
-* `subviewBeforeShow` - 当元素即将切至视口时触发
-* `subviewAfterShow` - 当元素完成切至视口动作时触发
-* `subviewBeforeHide` - 当元素即将移出视口时触发
-* `subviewAfterHide` - 当元素完成移出视口动作时触发
-
-可以通过事件绑定来实现各阶段回调， **每次事件发生时** 均会执行回调函数。
-
-## HTML 接口<a name="html-api"></a>
-
-使用 Action 类库绑定了预定义的动作后，即可使用以下 HTML 接口。
-
-具备特定属性的 HTML 元素可以直接触发 view 的切换动作，无需额外处理。
-
-### 切至指定的 view<a name="html-api-subview-switch-to"></a>
-
-```jade
-//sample 1
-a
-	@href="http://xxx"
-	@title="View 1"
-	@data-action="subview-switch-to"
-	@data-target="#view-1"
-	'切换至 #view-1'
-
-//sample 2
-a
-	@href="#view-2"
-	@title="Click here to switch to View 2"
-	@data-action="subview-switch-to"
-	@data-title="View 2"
-	'切换至 #view-2'
-```
-
-注意：
-
-* `data-target` 属性指定了目标元素的 ID（如 sample 1）。
-* 链接元素的 `href` 属性指定了目标元素显示时需要向历史记录中插入的 URL（如 sample 1）。若无此需求，则可以省去 `data-target` 属性，直接将目标元素的 ID 直接写入 `href` 属性（如 sample 2）。
-* 链接元素的 `title` 属性可用于指定目标元素显示时的页面标题（如 sample 1）。如果链接的此属性已有其它作用，可以使用 `data-title` 属性来指定（如 sample 2）。
-
-### 切回上一个 view<a name="html-api-subview-switch-back"></a>
-
-```jade
-a
-	@href="#"
-	@data-action="subview-switch-back"
-	'切回上一个 view'
-```
-
-注意：链接元素的 `href` 属性无需指定目标元素（即使指定也会被忽略），组件将从栈中取出上一个 view。如果一定要指定目标元素，请使用 `ui-subview-switch-to` 这个 action。
