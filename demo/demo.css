@@ -1,0 +1,74 @@
+/** css reset **/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+ul, li, menu {
+  list-style-type: none;
+}
+body {
+  font: 16px/1.5 Arial, sans-serif;
+}
+
+/** basic **/
+html {
+  height: 100%;
+  background-color: #808080;
+}
+body {
+  box-sizing: border-box;
+  min-height: 100%;
+  margin: 0 auto;
+  width: 320px;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+.ui-nav-bar {
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  border-bottom: 1px solid #c0c0c0;
+  background-color: #eee;
+}
+footer {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #eee;
+}
+
+/** ui **/
+.ui-subview > main {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+main p {
+  padding: 30px 10px;
+}
+
+main a {
+  display: block;
+  padding: 10px;
+}
+
+/** id **/
+#root {
+  background-color: #8fbc8f;
+}
+
+#view1 {
+  background-color: #87cefa;
+}
+
+#view2 {
+  background-color: #9acd32;
+}
+
+#view3 {
+  background-color: #fafad2;
+}

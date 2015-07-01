@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Demo - Subview</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="../dist/subview.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<!-- main area of this page -->
+<article class="subview subview-root" id="root">
+	<header class="ui-nav-bar"><h1>Demo - Subview</h1></header>
+	<main>
+		<div>
+			<p><a href="https://github.com/cssmagic/subview">View on GitHub</a></p>
+		</div>
+		<button id="to-view1">#view1</button>
+		<button id="to-view2">#view2</button>
+		<button id="to-view3">#view3</button>
+		<p>text text text text text text text text </p>
+		<ul>
+			<li>
+				<a data-action="subview-switch-to" data-target="#view1" title="View 1" href="?view=1">
+					<p>to page1 &gt;&gt;</p></a></li>
+			<li>
+				<a data-action="subview-switch-to" data-target="#view2" title="View 2" href="?view=2">to page2 &gt;&gt;</a>
+			</li></ul>
+		<p>text text text text text text text text </p>
+		<ul><li>
+			<a data-action="subview-switch-to" data-target="#view1" title="View 1" href="?view=1">to page1 &gt;&gt;</a>
+		</li><li>
+			<a data-action="subview-switch-to" data-target="#view2" title="View 2" href="?view=2">to page2 &gt;&gt;</a>
+		</li></ul>
+		<p>text text text text text text text text </p>
+		<p>text text text text text text text text </p>
+		<p>text text text text text text text text </p>
+		<ul><li>
+			<a data-action="subview-switch-to" data-target="#view1" title="View 1" href="?view=1">to page1 &gt;&gt;</a>
+		</li><li>
+			<a data-action="subview-switch-to" data-target="#view2" title="View 2" href="?view=2">to page2 &gt;&gt;</a>
+		</li></ul>
+		<p>text text text text text text text text </p>
+		<p>text text text text text text text text </p>
+		<p>text text text text text text text text </p>
+		<ul><li>
+			<a data-action="subview-switch-to" data-target="#view1" title="View 1" href="?view=1">to page1 &gt;&gt;</a>
+		</li><li>
+			<a data-action="subview-switch-to" data-target="#view2" title="View 2" href="?view=2">to page2 &gt;&gt;</a>
+		</li></ul>
+	</main>
+	<footer>footer text</footer>
+</article>
+
+<!-- switchable views of this page -->
+<article class="subview" id="view1">
+	<header class="ui-nav-bar"><h1>page1</h1></header>
+	<main><a data-action="subview-switch-back" href="#">&lt;&lt; back</a>
+		<p>11111 11111 11111 11111 11111 </p>
+		<a data-action="subview-switch-to" data-target="#view2" title="View 2" href="?view=2">view2 &gt;&gt;</a>
+		<p>11111 11111 11111 11111 11111 </p>
+		<a data-action="subview-switch-back" href="#">&lt;&lt; back</a>
+		<p>11111 11111 11111 11111 11111 </p><p>11111 11111 11111 11111 11111 </p>
+		<p>11111 11111 11111 11111 11111 </p>
+		<a data-action="subview-switch-back" href="#">&lt;&lt; back</a>
+		<p>11111 11111 11111 11111 11111 </p><p>11111 11111 11111 11111 11111 </p>
+		<p>11111 11111 11111 11111 11111 </p>
+		<a data-action="subview-switch-back" href="#">&lt;&lt; back</a></main>
+</article>
+<article class="subview" id="view2">
+	<header class="ui-nav-bar"><h1>page2</h1></header>
+	<main><a data-action="subview-switch-back" href="#">&lt;&lt; back</a>
+		<p>22222 22222 22222 22222 22222 </p>
+		<a data-action="subview-switch-to" data-target="#view3" title="View 3" href="?view=3">view3 &gt;&gt;</a>
+		<p>22222 22222 22222 22222 22222 </p>
+		<a class="updateState" data-url="#test-both" data-title="both" href="#">[Update State - both]</a><a class="updateState" data-url="#test-url" href="#">[Update State - url]</a><a class="updateState" data-title="title" href="#">[Update State - title]</a>
+		<p>22222 22222 22222 22222 22222 </p><p>22222 22222 22222 22222 22222 </p>
+		<p>22222 22222 22222 22222 22222 </p>
+		<a data-action="subview-switch-back" href="#">&lt;&lt; back</a>
+		<p>22222 22222 22222 22222 22222 </p><p>22222 22222 22222 22222 22222 </p>
+		<p>22222 22222 22222 22222 22222 </p>
+		<a data-action="subview-switch-back" href="#">&lt;&lt; back</a></main>
+</article>
+<article class="subview" id="view3">
+	<header class="ui-nav-bar"><h1>page3</h1></header>
+	<main><a data-action="subview-switch-back" href="#">&lt;&lt; back</a>
+		<p>33333 33333 33333 33333 33333 </p><p>33333 33333 33333 33333 33333 </p>
+		<p>33333 33333 33333 33333 33333 </p>
+		<a data-action="subview-switch-back" href="#">&lt;&lt; back</a>
+		<p>33333 33333 33333 33333 33333 </p><p>33333 33333 33333 33333 33333 </p>
+		<p>33333 33333 33333 33333 33333 </p>
+		<a data-action="subview-switch-back" href="#">&lt;&lt; back</a>
+		<p>33333 33333 33333 33333 33333 </p><p>33333 33333 33333 33333 33333 </p>
+		<p>33333 33333 33333 33333 33333 </p>
+		<a data-action="subview-switch-back" href="#">&lt;&lt; back</a>
+		<p>33333 33333 33333 33333 33333 </p><p>33333 33333 33333 33333 33333 </p>
+		<p>33333 33333 33333 33333 33333 </p>
+		<a data-action="subview-switch-back" href="#">&lt;&lt; back</a></main>
+</article>
+<!-- deps -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/history.state/src/history.state.js"></script>
+<script src="../bower_components/action/src/action.js"></script>
+<script src="../src/subview.js"></script>
+<!-- test-case -->
+<script src="demo.js"></script>
+</body>
+</html>
