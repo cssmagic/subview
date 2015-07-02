@@ -86,15 +86,7 @@ var subview = (function (window) {
 			}.bind(this), 0)
 		},
 		_bind: function () {
-			var $body = $(document.body)
 			var $win = $(window)
-			$body
-				.on('click', '[data-action="' + this.ACT_SWITCH_BACK + '"]', function (ev) {
-					ev.preventDefault()
-					//console.log('[action] ' + this.ACT_SWITCH_BACK)
-					this.switchBack()
-				}.bind(this))
-
 			$win
 				//WebKit bug (or feature?): it triggers `popstate` event on window load
 				.on('load', function () {
@@ -239,7 +231,6 @@ var subview = (function (window) {
 		},
 
 		//api
-		//当页面中增加了新的 view 元素后，需要调用一次本方法
 		refresh: function () {
 			this._update()
 		},
