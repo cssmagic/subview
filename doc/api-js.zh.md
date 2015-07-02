@@ -6,7 +6,7 @@ title: "API 文档 - JavaScript 接口"
 
 ### `subview.init()`<a name="js-api-init"></a>
 
-初始化方法。当 DOM ready 时需要执行此方法。此方法会对所有 view 元素做必要初始化。
+初始化方法。当 DOM ready 时需要执行此方法。此方法会对所有 view 元素做必要初始化，并且完成初始的事件绑定。
 
 #### 参数
 
@@ -15,6 +15,40 @@ title: "API 文档 - JavaScript 接口"
 #### 返回值
 
 （无）
+
+#### 示例
+
+```js
+// init when DOM is ready
+$(function () {
+	subview.init()
+})
+```
+
+***
+
+### `subview.refresh()`<a name="js-api-init"></a>
+
+重新初始化方法。有些时候你希望动态地按需创建 view 元素。那么，每当你在页面中添加了新的 view 元素之后，都需要调用一次本方法，以便 Subview 组件可以正确地处理这些 view。
+
+#### 参数
+
+（无）
+
+#### 返回值
+
+（无）
+
+#### 示例
+
+```js
+// create a new view
+var $newView = $('<article class="subview">...</article>')
+$('body').append($newView)
+
+// tell Subview to handle all new views
+subview.refresh()
+```
 
 ***
 
@@ -100,9 +134,9 @@ title: "API 文档 - JavaScript 接口"
 
 ### `subview.exportActions()`<a name="js-api-exportActions"></a>
 
-将预定义的动作导出，以便 [Action](https://github.com/cssmagic/action) 类库完成事件绑定。完成这一步之后，下面将要介绍的 HTML 接口即可正常使用了。
+将预定义的动作导出，以便传递给 [Action](https://github.com/cssmagic/action) 类库完成事件绑定。完成这一步之后，[所有 HTML 接口](https://github.com/cssmagic/subview/issues/4) 即可正常使用了。
 
-此操作可在任何时机执行，执行后 HTML 接口即生效。因此建议在执行完初始化方法之后立即完成此操作。
+此操作可在任何时机执行，执行后 HTML 接口即生效。因此建议在初始化之后立即完成此操作。
 
 #### 参数
 

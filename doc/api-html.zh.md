@@ -4,7 +4,7 @@ title: "API 文档 - HTML 接口"
 
 ## HTML 接口<a name="html-api"></a>
 
-使用 Action 类库绑定了预定义的动作后，即可使用以下 HTML 接口。
+使用 Action 类库绑定了预定义的动作后（参见 [`subview.exportActions()`](https://github.com/cssmagic/subview/issues/2#js-api-exportActions) 接口），即可使用以下 HTML 接口。
 
 具备特定属性的 HTML 元素可以直接触发 view 的切换动作，无需额外处理。
 

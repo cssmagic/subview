@@ -4,7 +4,7 @@ title: "API 文档 - 导言"
 
 ## 导言<a name="intro"></a>
 
-#### 概述
+#### 基本概念<a name="intro-concept"></a>
 
 每个独立的子页面被称作一个 view。使用 Subview 组件的网页至少应该包含一个 root view 和一个 sub view。
 
@@ -18,12 +18,12 @@ title: "API 文档 - 导言"
 * 当从候选区中的某个 view 切入视口时，它将被压入栈。
 * 当当前 view 返回到上一个 view 时，当前 view 会从栈中抛出（移回候选区）。
 
-#### 结构层约定
+#### 结构层约定<a name="intro-structural-convention"></a>
 
 ```jade
 body
 	article.subview.subview-root
-		//e.g. main page
+		//e.g. listing page
 
 	article.subview#login
 		header.nav-bar
@@ -32,10 +32,10 @@ body
 		main
 			//e.g. login form
 
-	article.subview#prd-detail
+	article.subview#detail
 		header.nav-bar
 			a @href='#' '<< 返回'
-			h1 'Product'
+			h1 'Detail'
 		main
-			//e.g. product detail
+			//e.g. detail page
 ```
