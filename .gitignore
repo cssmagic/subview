@@ -23,6 +23,3 @@ npm-debug.log
 
 *.sh
 *.bat
-
-dist/
-!dist/subview.css

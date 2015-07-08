@@ -5,8 +5,10 @@
     "cssmagic <cssmagic.cn@gmail.com>"
   ],
   "description": "View switching with history support.",
-  "main": "src/subview.js",
+  "main": "dist/subview.umd.js",
   "moduleType": [
+    "amd",
+    "node",
     "globals"
   ],
   "keywords": [
