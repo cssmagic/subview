@@ -2,12 +2,12 @@
 
 var path = require('path')
 var gulp = require('gulp')
+var del = require('del')
 var stylus = require('gulp-stylus')
+var rename = require('gulp-rename')
 var wrap = require('gulp-wrap')
 var replace = require('gulp-replace')
-var rename = require('gulp-rename')
 var uglify = require('gulp-uglify')
-var del = require('del')
 
 var myPath = {
 	src: './src/',
@@ -37,11 +37,12 @@ gulp.task('js', function() {
 })
 
 gulp.task('css', function() {
-	gulp.src(path.join(myPath.src, 'subview.styl'))
+	gulp.src(path.join(myPath.src, '_wrapper/css.styl'))
 		.pipe(stylus({
 			linenos: false,
 			compress: false,
 			errors: true
 		}))
+		.pipe(rename('subview.css'))
 		.pipe(gulp.dest(myPath.dest))
 })

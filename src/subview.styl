@@ -1,24 +1,25 @@
-body
-	// because there will be subviews hidden beside the stage
-	// we need to limit the width of the stage to the width of the viewport
-	width 100%
-	overflow-x hidden
-
-$cls-subview ?= 'subview'
-$cls-subview-in ?= 'subview-in'
-$cls-subview-out ?= 'subview-out'
-$cls-subview-ready ?= 'subview-ready'
-$cls-root-view ?= 'subview-root'
-
-.{$cls-subview}
-	display none
-	width 100%
-	overflow-x hidden
-
-	&:only-of-type
-	&.{$cls-root-view}
-	&.{$cls-subview-in}
-		display block
-	&.{$cls-subview-ready}
-	&.{$cls-subview-out}
+subview()
+	body
+		// because there will be subviews hidden beside the stage
+		// we need to limit the width of the stage to the width of the viewport
+		width 100%
+		overflow-x hidden
+	
+	$-cls = 'subview'
+	$-cls-in = 'subview-in'
+	$-cls-out = 'subview-out'
+	$-cls-ready = 'subview-ready'
+	$-cls-root = 'subview-root'
+	
+	.{$-cls}
 		display none
+		width 100%
+		overflow-x hidden
+	
+		&:only-of-type
+		&.{$-cls-root}
+		&.{$-cls-in}
+			display block
+		&.{$-cls-ready}
+		&.{$-cls-out}
+			display none
