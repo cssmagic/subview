@@ -4,16 +4,16 @@
 		define(['jquery'], factory)
 	} else if (typeof exports === 'object') {
 		// CommonJS
-		module.exports = factory()
+		module.exports = factory(require('jquery'))
 	} else {
 		// Browser globals
-		root.{sample} = factory()
+		root.subview = factory(root.jQuery || root.Zepto || root.$)
 	}
-}(this, function () {
+}(this, function ($) {
 
-////////////////////  start: source code  ////////////////////
+////////////////////  START: source code  ////////////////////
 <%= contents %>
-////////////////////  end: source code  ////////////////////
+////////////////////  END: source code  ////////////////////
 
 	return {sample}
 })

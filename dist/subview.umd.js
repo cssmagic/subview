@@ -4,14 +4,14 @@
 		define(['jquery'], factory)
 	} else if (typeof exports === 'object') {
 		// CommonJS
-		module.exports = factory()
+		module.exports = factory(require('jquery'))
 	} else {
 		// Browser globals
-		root.subview = factory()
+		root.subview = factory(root.jQuery || root.Zepto || root.$)
 	}
-}(this, function () {
+}(this, function ($) {
 
-////////////////////  start: source code  ////////////////////
+////////////////////  START: source code  ////////////////////
 /**
  * Subview - View switching with history support.
  * Released under the MIT license.
@@ -93,9 +93,9 @@ var subview = (function (window) {
 				// but we suppose subview should be the first component to operate history at all.
 				history.replaceState(state, null, null)
 
-				/** DEBUG_INFO_START **/
+				/*
 				console.log('[Subview] [replaceState] time: ' + Date.now() + ', state: ' + JSON.stringify(history.state))
-				/** DEBUG_INFO_END **/
+				*/
 
 			}.bind(this), 0)
 		},
@@ -339,7 +339,7 @@ var subview = (function (window) {
 
 }(window))
 
-////////////////////  end: source code  ////////////////////
+////////////////////  END: source code  ////////////////////
 
 	return subview
 })

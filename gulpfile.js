@@ -27,6 +27,8 @@ gulp.task('js', function() {
 	gulp.src(path.join(myPath.src, 'subview.js'))
 		.pipe(wrap({src: path.join(myPath.src, '_wrapper/umd.ejs')}))
 		.pipe(replace(/\{sample}/g, 'subview'))
+		.pipe(replace(/\/\*\* DEBUG_INFO_START \*\*\//g, '/*'))
+		.pipe(replace(/\/\*\* DEBUG_INFO_END \*\*\//g, '*/'))
 		.pipe(rename('subview.umd.js'))
 		.pipe(gulp.dest(myPath.dest))
 		.pipe(uglify({
