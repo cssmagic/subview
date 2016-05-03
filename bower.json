@@ -24,6 +24,7 @@
     "node_modules",
     "bower_components",
     "gulpfile.js",
+    "src/_wrapper/",
     "test",
     "doc",
     "demo"

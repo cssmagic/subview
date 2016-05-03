@@ -1,8 +1,15 @@
 {
   "name": "subview",
+  "version": "0.1.2",
   "homepage": "https://github.com/cssmagic/subview",
   "author": "cssmagic <cssmagic.cn@gmail.com>",
   "description": "View switching with history support.",
+  "main": "dist/subview.umd.js",
+  "keywords": [
+    "view",
+    "history",
+    "ui"
+  ],
   "license": "MIT",
   "scripts": {
     "dist": "gulp",
@@ -11,7 +18,9 @@
     "css": "gulp css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "*"
+  },
   "devDependencies": {
     "gulp": "3.*",
     "del": "1.*",

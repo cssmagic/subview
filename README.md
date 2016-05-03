@@ -7,13 +7,13 @@
 #### 浏览器支持
 
 * 支持以下移动平台的主流浏览器：
-    * iOS 5+
+    * iOS 7+
     * Android 4+
 
 * 同样支持以下桌面浏览器：
-    * Firefox (edge)
-    * Chrome (edge)
-    * Safari (edge)
+    * Firefox (Latest)
+    * Chrome (Latest)
+    * Safari (Latest)
 
 #### 外部依赖
 
