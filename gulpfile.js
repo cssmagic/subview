@@ -19,8 +19,8 @@ gulp.task('default', ['clean'], function () {
 	gulp.start('css')
 })
 
-gulp.task('clean', function () {
-	del(path.join(myPath.dest, '*.*'))
+gulp.task('clean', function (callback) {
+	del(path.join(myPath.dest, '*.*'), callback)
 })
 
 gulp.task('js', function() {
