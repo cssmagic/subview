@@ -24,14 +24,12 @@
     "node_modules",
     "bower_components",
     "gulpfile.js",
-    "src/_wrapper/",
     "test",
     "doc",
-    "demo"
+    "demo",
+    "src/_wrapper/"
   ],
   "dependencies": {
-    "action": "0.3.*",
-    "history.state": "1.*",
     "jquery": "*"
   },
   "devDependencies": {
