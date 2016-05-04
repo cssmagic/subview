@@ -42,7 +42,7 @@
 	<!-- deps -->
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<!-- optional deps -->
-	<script src="bower_components/history.state/src/history.state.js"></script>
+	<script src="bower_components/history.state/dist/history.state.umd.js"></script>
 	<script src="bower_components/action/src/action.js"></script>
 	<!-- this lib -->
 	<script src="bower_components/subview/src/subview.js"></script>
