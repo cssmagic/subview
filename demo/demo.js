@@ -49,7 +49,6 @@ void function () {
 	}
 
 	// init
-	historyState.polyfill()
 	action.add(subview.exportActions())
 	subview.init()
 	demo.init()

@@ -33,6 +33,8 @@
     "jquery": "*"
   },
   "devDependencies": {
+    "action": "0.3.*",
+    "history.state": "2.*",
     "zepto.js": "1.*"
   }
 }
