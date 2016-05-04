@@ -7,13 +7,13 @@
 		module.exports = factory(require('jquery'))
 	} else {
 		// Browser globals
-		root.{sample} = factory(root.jQuery || root.Zepto || root.$)
+		root['/*{sample}*/'] = factory(root.jQuery || root.Zepto || root.$)
 	}
 }(this, function ($) {
 
 ////////////////////  START: source code  ////////////////////
-<%= contents %>
+/* <%= contents %> */
 ////////////////////  END: source code  ////////////////////
 
-	return {sample}
+	return /*{sample}*/
 })
